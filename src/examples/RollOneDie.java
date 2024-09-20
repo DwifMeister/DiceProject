@@ -6,35 +6,34 @@ public class RollOneDie {
     private static int rollCount = 0;
 
     public static void main(String[] args) {
-        System.out.println("Velkommen til spillet, rul en terning.");
+        System.out.println("welcome to the game, roll one die");
         printRules();
         System.out.println();
 
         playOneDie();
 
         System.out.println();
-        System.out.println("Tak for at spille, rul en terning.");
+        System.out.println("Thanks for playing!");
     }
 
     private static void printRules() {
         System.out.println("=====================================================");
-        System.out.println("Regler for rul en terning");
-        System.out.println("Spilleren ruller en terning, så længde man lyster.");
+        System.out.println("the player rolls a die.");
+        System.out.println("The die can be rolled as long as you want.");
         System.out.println("=====================================================");
     }
 
     private static void playOneDie() {
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Rul en terning? ('ja/nej') ");
+        System.out.println("Roll a die? If yes press [enter] if no, type no and press [enter]");
         String answer = scanner.nextLine();
-        while (!answer.equals("nej")) {
+        while (!answer.equals("no")) {
             int face = rollDie();
-            System.out.println("Du rullede: " + face);
+            System.out.println("You rolled: " + face);
             System.out.println();
 
             updateStatistics();
-
-            System.out.print("Rul en terning? ('ja/nej') ");
+            System.out.println("Roll a die? If yes press [enter] if no, type no and press [enter]");
             answer = scanner.nextLine();
         }
 
@@ -53,7 +52,7 @@ public class RollOneDie {
     private static void printStatistics() {
         System.out.println("\nResults:");
         System.out.println("-------");
-        System.out.printf("%17s %4d\n", "Antal rul:", rollCount);
+        System.out.printf("%17s %4d\n", "Rolls:", rollCount);
     }
 
 }
